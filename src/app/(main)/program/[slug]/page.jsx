@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function ProgramDetailPage() {
-  return <div>ProgramDetailPage</div>;
+  return <MainLayout>ProgramDetailPage</MainLayout>;
 }

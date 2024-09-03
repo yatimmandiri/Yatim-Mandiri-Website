@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function OpiniDewanSyariahPage() {
-  return <div>OpiniDewanSyariahPage</div>;
+  return <MainLayout>OpiniDewanSyariahPage</MainLayout>;
 }

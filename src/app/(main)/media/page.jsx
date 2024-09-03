@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function MediaPage() {
-  return <div>MediaPage</div>;
+  return <MainLayout>MediaPage</MainLayout>;
 }

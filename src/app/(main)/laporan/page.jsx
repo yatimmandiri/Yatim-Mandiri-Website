@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function LaporanKeuanganPage() {
-  return <div>LaporanKeuanganPage</div>;
+  return <MainLayout>LaporanKeuanganPage</MainLayout>;
 }
