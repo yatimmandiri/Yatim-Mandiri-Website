@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function PartnershipPage() {
-  return <div>PartnershipPage</div>;
+  return <MainLayout>PartnershipPage</MainLayout>;
 }

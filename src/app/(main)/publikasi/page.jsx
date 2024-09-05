@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function PublikasiPage() {
-  return <div>PublikasiPage</div>;
+  return <MainLayout>PublikasiPage</MainLayout>;
 }

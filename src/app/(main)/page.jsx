@@ -1,10 +1,9 @@
-import Navbar from "@/components/Navbar";
+import { MainLayout } from '@/layouts/MainLayout';
 
 export default function MainPage() {
   return (
-    <main>
-      <Navbar></Navbar>
-      
-    </main>
+    <MainLayout>
+      <h1>MainPage</h1>
+    </MainLayout>
   );
 }

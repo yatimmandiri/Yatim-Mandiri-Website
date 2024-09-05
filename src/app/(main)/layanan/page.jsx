@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function LayananKamiPage() {
-  return <div>LayananKamiPage</div>;
+  return <MainLayout>LayananKamiPage</MainLayout>;
 }

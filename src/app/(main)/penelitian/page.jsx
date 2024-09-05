@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function PenelitianPage() {
-  return <div>PenelitianPage</div>;
+  return <MainLayout>PenelitianPage</MainLayout>;
 }

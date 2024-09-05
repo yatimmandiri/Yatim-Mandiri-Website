@@ -1,3 +1,5 @@
+import { MainLayout } from '@/layouts/MainLayout';
+
 export default function FaqPage() {
-  return <div>FaqPage</div>;
+  return <MainLayout>FaqPage</MainLayout>;
 }
