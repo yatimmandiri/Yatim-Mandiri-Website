@@ -5,7 +5,7 @@ export const MainHeader = () => {
   const menus = [
     {
       label: 'Tentang Kami',
-      href: '/tentang-kami',
+      href: '/tentang',
     },
     {
       label: 'Layanan',
