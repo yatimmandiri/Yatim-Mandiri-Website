@@ -1,4 +1,5 @@
 import '@/app/globals.css';
+import classNames from 'classnames';
 
 import { Inter } from 'next/font/google';
 
@@ -16,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang='en' className={classNames(inter.variable)}>
       <body>{children}</body>
     </html>
   );
