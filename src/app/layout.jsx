@@ -5,9 +5,8 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-inter',
-  style: 'normal'
+  display: 'swap',
 });
 
 export const metadata = {
@@ -17,8 +16,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className={classNames(inter.variable)}>
-      <body>{children}</body>
+    <html lang='en' className={classNames(inter.className)}>
+      <body className={classNames('antialiased')}>{children}</body>
     </html>
   );
 }
