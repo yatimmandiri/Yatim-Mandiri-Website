@@ -7,3 +7,13 @@
     @apply font-inter;
   }
 }
+
+@layer components {
+  .card-majalah {
+    @apply bg-red-500;
+  }
+
+  .acc-one {
+    @apply bg-orange-600 w-1.5 mr-2;
+  }
+}
