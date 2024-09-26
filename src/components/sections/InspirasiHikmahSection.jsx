@@ -4,20 +4,18 @@ import Link from 'next/link';
 
 export const InspirasiHikmahSection = ({ data = [] }) => {
   return (
-    <div className='flex flex-col space-y-4 py-4 px-6 md:px-24'>
+    <section className='flex flex-col space-y-4 px-4 md:px-16 py-4'>
       <TitleSectionComponent title='Inspirasi dan Hikmah' />
-      <div className='flex-1'>
-        <div className='grid grid-cols-1 gap-4'>
-          {data?.map((item, i) => (
-            <InspirasiHikmahItemSection
-              key={i}
-              item={item}
-              priority={i == 0 ? true : false}
-            />
-          ))}
-        </div>
+      <div className='grid grid-cols-1 gap-4'>
+        {data?.map((item, i) => (
+          <InspirasiHikmahItemSection
+            key={i}
+            item={item}
+            priority={i == 0 ? true : false}
+          />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -25,14 +23,14 @@ export const InspirasiHikmahItemSection = ({ item = [] }) => {
   return (
     <Link
       href={item?.link}
-      className='flex flex-row space-x-4 border rounded-lg overflow-hidden'
+      className='flex flex-row space-x-4 border rounded-lg overflow-hidden shadow-md'
     >
       <Image
         src={item?.featured_image?.large}
         alt={item?.slug}
         width={400}
         height={400}
-        className='w-1/4 h-48 object-cover'
+        className='w-1/2 md:w-1/4 h-auto md:h-48 object-cover'
       />
       <div className='flex flex-col space-y-4 py-4'>
         <div className='flex flex-row space-x-3 text-blue-500 font-semibold text-sm'>

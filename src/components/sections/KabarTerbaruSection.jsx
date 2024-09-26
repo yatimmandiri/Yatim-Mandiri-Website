@@ -8,11 +8,11 @@ import { TitleSectionComponent } from '../partials/SectionComponent';
 
 export const KabarTerbaruSection = ({ data = [] }) => {
   return (
-    <div className='flex flex-col space-y-4 py-4 px-6 md:px-24'>
+    <div className='flex flex-col space-y-4 px-4 md:px-16 py-4'>
       <TitleSectionComponent title='Kabar Terbaru' />
       <div className='flex-1'>
         <Swiper
-          spaceBetween={50}
+          spaceBetween={20}
           modules={[Autoplay]}
           loop={true}
           breakpoints={{

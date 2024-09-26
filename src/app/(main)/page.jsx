@@ -1,5 +1,6 @@
 import { InspirasiHikmahSection } from '@/components/sections/InspirasiHikmahSection';
 import { KabarTerbaruSection } from '@/components/sections/KabarTerbaruSection';
+import { ProgramKamiSection } from '@/components/sections/ProgramKamiSection';
 import { MainLayout } from '@/layouts/MainLayout';
 import { GetDataBlogs, GetDataNews } from '@/services/AppService';
 
@@ -12,6 +13,7 @@ export default async function HomePage() {
   return (
     <MainLayout>
       <div className='flex flex-col'>
+        <ProgramKamiSection />
         <KabarTerbaruSection data={news?.data} />
         <InspirasiHikmahSection data={blog?.data} />
       </div>
