@@ -1,7 +1,10 @@
 import '@/app/globals.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import classNames from 'classnames';
 import { Inter } from 'next/font/google';
+import { Suspense } from 'react';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,7 +24,9 @@ export default function RootLayout({ children }) {
       className={classNames(inter.className)}
       suppressHydrationWarning={true}
     >
-      <body className={classNames('antialiased')}>{children}</body>
+      <body className={classNames('antialiased')}>
+        <Suspense fallback={null}>{children}</Suspense>
+      </body>
     </html>
   );
 }
