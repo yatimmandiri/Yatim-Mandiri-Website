@@ -5,7 +5,8 @@ import { HeroComponentOr } from "@/components/sections/HeroComponent";
 import { MainLayout } from "@/layouts/MainLayout";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -32,11 +33,18 @@ export default function PartnershipPage() {
     },
   ];
 
-  const logos = Array.from({ length: 10 }, (_, i) => `/img/child.jpg`);
+  const logos = Array.from({ length: 10 }, (_, i) => `/img/google-cloud.svg`);
 
   return (
     <MainLayout>
-      <HeroComponentOr />
+      <HeroComponentOr
+        src="/img/partner.png"
+        title="Jalin Kemitraan dengan Yatim Mandiri. Bersama, Wujudkan Dampak Positif
+          untuk Yatim dan Dhuafa di Indonesia"
+        subTitle="Bergabunglah dalam kemitraan dengan Yatim Mandiri untuk bersama-sama
+          memperluas dampak positif bagi yatim dan dhuafa di seluruh Indonesia"
+        
+      />
       <section className="my-12 px-5 lg:px-24">
         <h2 className="text-center text-2xl font-bold mb-4">
           30 Tahun Yatim Mandiri dan 100+ Partner yang Pernah Menjalin Kemitraan
@@ -50,7 +58,7 @@ export default function PartnershipPage() {
         </p>
 
         {/* Container for logos */}
-        <div className="items-center">
+        <div className="flex-col">
           <Swiper
             breakpoints={{
               640: {
@@ -76,53 +84,71 @@ export default function PartnershipPage() {
                   alt={logo}
                   width={300}
                   height={200}
-                  className="w-24 h-24 sm:w-full"
+                  className="h-24 sm:w-full w-full"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </section>
-
-      <section>
-        <div className="bg-gray-100 text-center py-12 px-5 lg:px-24">
-          <h2 className="text-2xl font-bold mb-6">
-            Kenapa Harus Yatim Mandiri
-          </h2>
-          <p className="mb-10 text-gray-600 max-w-lg mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam.
-          </p>
-
-          {/* Cards Container */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            {[1, 2, 3, 4, 5, 6].map((i, data) => {
-              return (
-                <div key={i} className="p-6 text-start">
-                  <div className="flex justify-start mb-4">
-                    <div className="bg-orange-500 p-4 rounded-lg">
-                      <Image
-                        src={logo}
-                        alt={logo}
-                        width={300}
-                        height={200}
-                        className="w-24 h-24"
-                      />
-                    </div>
-                  </div>
-                  <h3 className="font-bold text-xl mb-2">Berpengalaman</h3>
-                  <p className="text-gray-500">
-                    Yatim mandiri sudah berpengalaman 30+ tahun lebih untuk
-                    mengelola dana CSR dari berbagai perusahaan di Indonesia.
-                  </p>
-                </div>
-              );
-            })}
-
-            {/* Add other cards similarly */}
-          </div>
+          <Swiper
+            breakpoints={{
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+              },
+            }}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[Autoplay]}
+          >
+            {logos.map((logo, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={logo}
+                  alt={logo}
+                  width={300}
+                  height={200}
+                  className="h-24 sm:w-full w-full my-5"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <Swiper
+            breakpoints={{
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              1024: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+              },
+            }}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[Autoplay]}
+          >
+            {logos.map((logo, i) => (
+              <SwiperSlide key={i}>
+                <Image
+                  src={logo}
+                  alt={logo}
+                  width={300}
+                  height={200}
+                  className="h-24 sm:w-full w-full"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </section>
 
@@ -155,44 +181,104 @@ export default function PartnershipPage() {
         </div>
       </section>
 
+      <section>
+        <div className="bg-gray-100 text-center py-12 px-5 lg:px-24">
+          <h2 className="text-2xl font-bold mb-6">
+            Kenapa Harus Yatim Mandiri
+          </h2>
+          <p className="mb-10 text-gray-600 max-w-lg mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam.
+          </p>
+
+          {/* Cards Container */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            {[1, 2, 3, 4, 5, 6].map((i, data) => {
+              return (
+                <div key={i} className="p-6 text-start">
+                  <div className="flex justify-start mb-4">
+                    <div className="bg-orange-500 p-2 rounded-lg">
+                      <Image
+                        src="/img/badge.svg"
+                        alt="{logo}"
+                        width={300}
+                        height={200}
+                        className="w-10 h-10"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-xl mb-2">Berpengalaman</h3>
+                  <p className="text-gray-500">
+                    Yatim mandiri sudah berpengalaman 30+ tahun lebih untuk
+                    mengelola dana CSR dari berbagai perusahaan di Indonesia.
+                  </p>
+                </div>
+              );
+            })}
+
+            {/* Add other cards similarly */}
+          </div>
+        </div>
+      </section>
+
       <section className="news-partnership">
-        <div className="bg-white">
-          {/* Yatim Mandiri TV Section */}
-          <section className="px-5 lg:px-24 py-10 items-center">
-            <div className="flex-col">
+        <div className="bg-white relative">
+          {/* News Partnership */}
+          <Image
+            src="/img/spiral.png"
+            alt="Yatim Mandiri TV Thumbnail"
+            width={300}
+            height={170}
+            className="absolute"
+          />
+          <section className="py-10 items-center sticky">
+            <div className="flex-col px-5 lg:px-24">
               <h2 className="text-lg font-semibold mb-4 text-center">
-                YATIM MANDIRI TV
+                Berita Kemitraan
               </h2>
               <p className="text-md text-center mb-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-                nesciunt. Nobis labore velit id hic quisquam vero ut officiis,
-                exercitationem ad et dolorem? Accusamus suscipit optio atque
-                reiciendis voluptatem necessitatibus.
+                Beragam manfaat dari hasil kolaborasi memberi senyuman yang
+                berarti untuk negeri. Yuk jadi salah satunya.
               </p>
             </div>
-            <Swiper
-              spaceBetween={20}
-              breakpoints={{
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                1024: {
-                  slidesPerView: 4,
-                  spaceBetween: 20,
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5].map((i, data) => {
-                return (
-                  <>
-                    <SwiperSlide>
-                      <SmallCard />
-                    </SwiperSlide>
-                  </>
-                );
-              })}
-            </Swiper>
+            <div className="flex text-center content-center items-center px-5 lg:px-8">
+              <button className="swiper-button-pre bg-white p-4 rounded-full border border-gray-300 text-black mr-6">
+                <ChevronLeftIcon className="w-5 h-5" />
+              </button>
+              <Swiper
+                spaceBetween={20}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                  },
+                }}
+                navigation={{
+                  nextEl: ".swiper-button-nex",
+                  prevEl: ".swiper-button-pre",
+                }}
+                modules={[Navigation]}
+              >
+                {[1, 2, 3, 4, 5].map((i, data) => {
+                  return (
+                    <>
+                      <SwiperSlide>
+                        <SmallCard hidden={false} />
+                      </SwiperSlide>
+                    </>
+                  );
+                })}
+              </Swiper>
+              <button className="swiper-button-nex bg-white p-4 rounded-full border border-gray-300 text-black ml-6">
+                <ChevronRightIcon className="w-5 h-5" />
+              </button>
+            </div>
           </section>
         </div>
       </section>

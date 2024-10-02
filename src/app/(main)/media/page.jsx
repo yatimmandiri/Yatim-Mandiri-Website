@@ -16,6 +16,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { BreadcrumbComponent } from "@/components/partials/BreadcrumbComponent";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 
 export default function MediaPage() {
   const news = [
@@ -287,37 +288,11 @@ export default function MediaPage() {
               <span>
                 {lastVisibleSlide} dari {news.length}
               </span>
-              <button className="swiper-button-pre p-2 rounded-lg border border-gray-300 text-gray-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19l-7-7 7-7"
-                  />
-                </svg>
+              <button className="swiper-button-pre p-1 rounded-lg border border-gray-300 text-gray-500">
+                <ChevronLeftIcon className="w-8 h-8" />
               </button>
-              <button className="swiper-button-nex p-2 rounded-lg border border-gray-300 text-gray-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-5 h-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 5l7 7-7 7"
-                  />
-                </svg>
+              <button className="swiper-button-nex p-1 rounded-lg border border-gray-300 text-gray-500">
+                <ChevronRightIcon className="w-8 h-8" />
               </button>
             </div>
           </div>

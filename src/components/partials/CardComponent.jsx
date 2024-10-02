@@ -21,25 +21,28 @@ export const NewsCard = ({ src, tagged, href, ...props }) => {
 };
 
 export const SmallCard = ({
+  hidden = true,
   src = "/img/child.jpg",
   content = "Profil Siswa - siswi Asrama Mandiri Entrepreneur Center (MEC)",
   href,
 }) => {
   return (
-    <div className="min-w-[250px] bg-white rounded-md mb-3">
+    <div className="lg:min-w-[250px] bg-transparent rounded-lg mb-3">
       <div className="relative">
         <Image
           src={src}
           alt="Yatim Mandiri TV Thumbnail"
           width={300}
           height={170}
-          className="rounded-md"
+          className="w-full rounded-lg"
         />
-        <div className="absolute inset-0 flex justify-center items-center">
-          <button className="bg-white bg-opacity-70 rounded-md p-1 shadow-md">
-            <PlayIcon className="w-8 h-8 text-gray-400" />
-          </button>
-        </div>
+        {hidden && (
+          <div className="absolute inset-0 flex justify-center items-center">
+            <button className="bg-white bg-opacity-70 rounded-md p-1 shadow-md">
+              <PlayIcon className="w-8 h-8 text-gray-400" />
+            </button>
+          </div>
+        )}
       </div>
       <p className="mt-4 text-sm font-semibold">{content}</p>
     </div>
@@ -78,6 +81,36 @@ export const MagazineCard = ({ src, tagged, href }) => {
             BACA
           </button>
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const ReportCard = ({
+  imgUrl = "",
+  title = "",
+  subTitle = "",
+  href = "",
+  btnTitle = "Lihat Laporan",
+  imgH = 400,
+  imgW = 600,
+}) => {
+  return (
+    <div className="bg-white rounded-lg shadow-lg border-2 flex flex-row lg:items-center">
+      <Image
+        src={imgUrl}
+        alt={title}
+        width={imgW}
+        height={imgH}
+        className="h-auto lg:h-56 w-40 rounded-xl p-2"
+      />
+      <div className="flex flex-col items-start py-3 px-2 text-start">
+        <div className="flex flex-col lg:mb-7 mb-2">
+          <h2 className="font-bold text-lg text-start mb-1">{title}</h2>
+          <p className="text-sm">{subTitle}</p>
+        </div>
+
+        <ButtonLinkComponent text={btnTitle} href={href} />
       </div>
     </div>
   );
