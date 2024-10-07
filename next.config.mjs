@@ -27,7 +27,7 @@ const nextConfig = {
         destination: 'https://yatimmandiri.org/blog/wp-json/ymapi/v2/:path*',
       },
       {
-        source: '/blog/:path*',
+        source: '/website/:path*',
         destination: 'https://web.yatimmandiri.org/:path*',
       },
     ];
